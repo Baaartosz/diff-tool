@@ -1,4 +1,4 @@
-package dev.baaart;
+package dev.baaart.difftool.model;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;

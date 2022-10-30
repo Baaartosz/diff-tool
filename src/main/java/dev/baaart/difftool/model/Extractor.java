@@ -1,4 +1,4 @@
-package dev.baaart;
+package dev.baaart.difftool.model;
 
 import org.apache.commons.lang3.tuple.Pair;
 

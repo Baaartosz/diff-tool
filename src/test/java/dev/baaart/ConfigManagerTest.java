@@ -1,5 +1,6 @@
 package dev.baaart;
 
+import dev.baaart.difftool.model.ConfigManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

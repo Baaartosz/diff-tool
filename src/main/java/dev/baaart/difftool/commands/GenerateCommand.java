@@ -1,4 +1,4 @@
-package dev.baaart.commands;
+package dev.baaart.difftool.commands;
 
 import java.util.concurrent.Callable;
 

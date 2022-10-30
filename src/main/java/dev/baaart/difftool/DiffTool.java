@@ -1,8 +1,9 @@
-package dev.baaart;
+package dev.baaart.difftool;
 
-import dev.baaart.commands.CleanupCommand;
-import dev.baaart.commands.ConfigCommand;
-import dev.baaart.commands.GenerateCommand;
+import dev.baaart.difftool.commands.CleanupCommand;
+import dev.baaart.difftool.commands.ConfigCommand;
+import dev.baaart.difftool.commands.GenerateCommand;
+import dev.baaart.difftool.model.ConfigManager;
 import picocli.CommandLine;
 
 import java.util.concurrent.Callable;

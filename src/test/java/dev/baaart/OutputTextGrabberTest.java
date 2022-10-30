@@ -1,5 +1,6 @@
 package dev.baaart;
 
+import dev.baaart.difftool.model.OutputTextGrabber;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
 

@@ -2,6 +2,9 @@ package dev.baaart;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dev.baaart.difftool.model.Extractor;
+import dev.baaart.difftool.model.InvalidInputException;
+import dev.baaart.difftool.model.OutputExtractor;
 import lombok.SneakyThrows;
 import org.apache.commons.lang3.tuple.Pair;
 import org.junit.jupiter.api.Test;
