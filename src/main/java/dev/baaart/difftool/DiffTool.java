@@ -41,7 +41,7 @@ public class DiffTool implements Callable<Integer> {
         ConfigManager.getInstance();
 
         CommandLine cli = new CommandLine(new DiffTool());
-        int returnCode = cli.execute(args);
+        int returnCode = cli.execute(new String[]{"config", "-o=C:\\Users\\bart\\AppData\\Roaming\\JetBrains\\IntelliJIdea2022.2\\scratches"});
 
         System.exit(returnCode);
     }
