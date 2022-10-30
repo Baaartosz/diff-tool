@@ -6,12 +6,12 @@ import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 
-public enum OutputTextGrabber {
+public enum ClipboardGrabber {
     INSTANCE;
 
     private final Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 
-    public String get() throws IOException, UnsupportedFlavorException {
+    public String getContents() throws IOException, UnsupportedFlavorException {
         return clipboard.getData(DataFlavor.stringFlavor).toString();
     }
 
