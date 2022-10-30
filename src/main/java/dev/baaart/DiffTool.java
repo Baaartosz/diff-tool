@@ -37,8 +37,11 @@ public class DiffTool implements Callable<Integer> {
     private DiffTool diffTool;
 
     public static void main(String[] args) {
+        ConfigManager.getInstance();
+
         CommandLine cli = new CommandLine(new DiffTool());
         int returnCode = cli.execute(args);
+
         System.exit(returnCode);
     }
 
