@@ -25,7 +25,7 @@ class ConfigManagerTest {
     void retrieveSavedPropertiesSuccessfully() {
         var config = configManager.get();
 
-        config.setProperty("scratchPath", "C:\\Users\\bart\\AppData\\Roaming\\JetBrains\\IntelliJIdea2022.2\\scratches");
+        config.setProperty("scratchFolder", "C:\\Users\\bart\\AppData\\Roaming\\JetBrains\\IntelliJIdea2022.2\\scratches");
         configManager.save(config);
 
         var modifiedConfig = configManager.get();
