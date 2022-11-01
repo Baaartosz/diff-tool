@@ -1,6 +1,6 @@
 package dev.baaart;
 
-import dev.baaart.difftool.model.OutputTextGrabber;
+import dev.baaart.difftool.model.ClipboardGrabber;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
 
@@ -22,7 +22,7 @@ class OutputTextGrabberTest {
     void get() {
         selection = new StringSelection(TEST_STRING);
         clipboard.setContents(selection, null);
-        assertEquals(TEST_STRING, OutputTextGrabber.INSTANCE.get());
+        assertEquals(TEST_STRING, ClipboardGrabber.INSTANCE.getContents());
     }
 
     @SneakyThrows
@@ -30,6 +30,6 @@ class OutputTextGrabberTest {
     void emptyTest() {
         selection = new StringSelection(EMPTY_STRING);
         clipboard.setContents(selection, null);
-        assertEquals(EMPTY_STRING, OutputTextGrabber.INSTANCE.get());
+        assertEquals(EMPTY_STRING, ClipboardGrabber.INSTANCE.getContents());
     }
 }

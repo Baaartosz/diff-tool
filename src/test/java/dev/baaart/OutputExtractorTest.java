@@ -19,6 +19,9 @@ class OutputExtractorTest {
 
     final String validOutput = """
             Some error because a test scenario failed: expected: <
+                        
+            This is the bearer code
+                        
             {
                 "embedded" : true,
                 "audioType" : "Stereo",
@@ -33,6 +36,9 @@ class OutputExtractorTest {
                 }
                 ]
             }> but was: <
+                        
+            This is the bearer code.
+                        
             {
                 "embedded" : true,
                 "audioType" : "Dolby 5.1",

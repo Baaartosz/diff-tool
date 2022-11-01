@@ -19,12 +19,15 @@ public class OutputExtractor implements Extractor{
 
     @Override
     public Pair<String, String> extract(String outputFile) throws Exception {
-        if(Objects.equals(outputFile, "")) throw new InvalidInputException("Output file is empty or missing.");
+        if (Objects.equals(outputFile, "")) throw new InvalidInputException("Output file is empty or missing.");
 
         String expectedOutput = searchForMatching(expectedPattern, outputFile);
         String actualOutput = searchForMatching(actualPattern, outputFile);
 
-        return new ImmutablePair<>(expectedOutput, actualOutput);
+        var trimmedExpectedMessage = expectedOutput.substring(expectedOutput.indexOf('{'));
+        var trimmedActualMessage = actualOutput.substring(actualOutput.indexOf('{'));
+
+        return new ImmutablePair<>(trimmedExpectedMessage, trimmedActualMessage);
     }
 
     private String searchForMatching(Pattern pattern, String string) throws Exception {
