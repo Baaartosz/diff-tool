@@ -24,7 +24,7 @@ public class DiffFileGenerator {
 
             System.out.println(ANSI.GREEN + "Successfully generated diff files.");
         } catch (Exception e) {
-            System.out.println(ANSI.PURPLE + "Unable to generate diff files." + ANSI.RESET);
+            System.out.println(ANSI.RED + "Generation Failure: " + e.getMessage() + ANSI.RESET);
         }
     }
 
