@@ -30,7 +30,6 @@ public class ConfigCommand implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        // TODO move into encapsulated class.
         if (!scratchFolderPath.equals("")) {
             if (!Files.exists(Paths.get(scratchFolderPath))) {
                 System.out.println(ANSI.RED + ANSI.BOLD + "Cannot find path: '" + scratchFolderPath + "'" + ANSI.RESET);
