@@ -24,7 +24,7 @@ import static picocli.CommandLine.ParentCommand;
                 \u001B[35m |___/   |_|  |_|    |_|  Speeding up debugging.
                 \u001B[0m""",
         mixinStandardHelpOptions = true,
-        version = "diff-tool 0.1",
+        version = "diff-tool 0.2",
         description = "Generates diff files for inspection within intellij from error outputs",
         subcommands = {
                 GenerateCommand.class,
