@@ -2,8 +2,8 @@ plugins {
     id 'java'
 }
 
-group 'dev.baaart.buildpipe'
-version '1.0-SNAPSHOT'
+group 'dev.baaart.difftool'
+version '0.2-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -24,7 +24,12 @@ test {
 }
 
 jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
     manifest {
         attributes 'Main-Class': 'dev.baaart.difftool.DiffTool'
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
