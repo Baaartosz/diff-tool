@@ -50,6 +50,11 @@ public class ConfigManager {
         return difftoolDirectory;
     }
 
+    public boolean isScratchDirMissing(){
+        var value = ConfigManager.getInstance().get().getProperty("scratchFolder");
+        return value == null || value.equals("");
+    }
+
     // TODO - to be moved into cleanup class.
     private void deleteDirectoryRecursion(Path path) throws IOException {
         if (Files.isDirectory(path, LinkOption.NOFOLLOW_LINKS)) {
