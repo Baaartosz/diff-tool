@@ -13,18 +13,14 @@ import static picocli.CommandLine.ParentCommand;
 
 
 @Command(
-        name = "diff",
-        header = """
-               \u001B[33m\u001B[36mDiffTool v0.3\u001B[0m
-               -- Made for Data Triggering!
-               """,
+        name = "difftool",
+        header = "\u001B[33m\u001B[36mDiffTool v0.3\u001B[0m\n" +
+                 "-- Made for Data Triggering!\n",
         version = "diff-tool 0.3",
-        description = """
-                \nGenerates diff files for inspection within intellij from error outputs.
-                \nCopy contents of cucumber output and run the generate command. Then two
-                diff files will be placed in your scratch folder where you can compare them
-                using the IDE
-                """,
+        description = "\nGenerates diff files for inspection within intellij from error outputs.\n" +
+                      "\nCopy contents of cucumber output and run the generate command. Then two\n" +
+                      "diff files will be placed in your scratch folder where you can compare them\n" +
+                      "using the IDE\n",
         optionListHeading = "Options:\n",
         subcommands = {
                 GenerateCommand.class,

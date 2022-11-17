@@ -23,6 +23,10 @@ test {
     useJUnitPlatform()
 }
 
+tasks.withType(JavaCompile) {
+    options.release = 11
+}
+
 jar {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
