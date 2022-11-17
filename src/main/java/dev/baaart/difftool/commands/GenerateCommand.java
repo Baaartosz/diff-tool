@@ -7,7 +7,7 @@ import static picocli.CommandLine.*;
 @Command(
         name = "generate", mixinStandardHelpOptions = true,
         aliases = {"gen", "g"},
-        description = "Runs diff tool generation comparing output log file for specific tags to find expected and actual results.\n"
+        description = "Runs diff generation comparing output log file for specific tags to find expected and actual results.\n"
 )
 public class GenerateCommand implements Runnable {
 

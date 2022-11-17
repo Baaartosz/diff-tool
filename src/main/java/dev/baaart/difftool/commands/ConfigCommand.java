@@ -41,8 +41,7 @@ public class ConfigCommand implements Callable<Integer> {
 
             ConfigManager.getInstance().save(properties);
             System.out.println(ANSI.GREEN + ANSI.BOLD + "Successfully set scratch folder path!" + ANSI.RESET);
-
-        } else System.out.println(ANSI.RED + ANSI.BOLD + "Error setting output directory to empty path!" + ANSI.RESET);
+        }
         return 0;
     }
 }

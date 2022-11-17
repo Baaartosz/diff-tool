@@ -1,6 +1,5 @@
 package dev.baaart.difftool;
 
-import dev.baaart.difftool.commands.CleanupCommand;
 import dev.baaart.difftool.commands.ConfigCommand;
 import dev.baaart.difftool.commands.GenerateCommand;
 import dev.baaart.difftool.model.ConfigManager;
@@ -8,28 +7,24 @@ import picocli.CommandLine;
 
 import java.util.concurrent.Callable;
 
+import static picocli.CommandLine.*;
 import static picocli.CommandLine.Command;
 import static picocli.CommandLine.ParentCommand;
 
 
 @Command(
-        name = "diff",
-        header = """
-                \u001B[31m )\\ )         (      (    \s
-                \u001B[31m(()/(    (    )\\ )   )\\ ) \s
-                \u001B[31m /(_))   )\\  (()/(  (()/( \s
-                \u001B[33m(_))_   ((_)  /(_))  /(_))\s
-                \u001B[35m |   \\   (_) (_) _| (_) _|\s
-                \u001B[35m | |) |  | |  |  _|  |  _|\s
-                \u001B[35m |___/   |_|  |_|    |_|  Speeding up debugging.
-                \u001B[0m""",
-        mixinStandardHelpOptions = true,
-        version = "diff-tool 0.2",
-        description = "Generates diff files for inspection within intellij from error outputs",
+        name = "difftool",
+        header = "\u001B[33m\u001B[36mDiffTool v0.3\u001B[0m\n" +
+                 "-- Made for Data Triggering!\n",
+        version = "diff-tool 0.3",
+        description = "\nGenerates diff files for inspection within intellij from error outputs.\n" +
+                      "\nCopy contents of cucumber output and run the generate command. Then two\n" +
+                      "diff files will be placed in your scratch folder where you can compare them\n" +
+                      "using the IDE\n",
+        optionListHeading = "Options:\n",
         subcommands = {
                 GenerateCommand.class,
-                ConfigCommand.class,
-                CleanupCommand.class
+                ConfigCommand.class
         }
 )
 public class DiffTool implements Callable<Integer> {
@@ -37,9 +32,14 @@ public class DiffTool implements Callable<Integer> {
     @ParentCommand
     private DiffTool diffTool;
 
+    @Option(
+            names = {"-h", "--help", "-?", "-help"}, usageHelp = true,
+            description = "Display this help and exit"
+    )
+    private boolean help;
+
     public static void main(String[] args) {
         ConfigManager.getInstance();
-
         CommandLine cli = new CommandLine(new DiffTool());
         int returnCode = cli.execute(args);
 
@@ -48,7 +48,13 @@ public class DiffTool implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
+        warnUser(ConfigManager.getInstance().isScratchDirMissing(), "Scratch directory is not set, run: difftool -output='<scratch directory>'");
         return 0;
     }
+
+    private static void warnUser(boolean condition, String message){
+        if(condition) System.out.println(ANSI.RED + ANSI.BOLD + "[WARNING] " + ANSI.RESET + message);
+    }
+
 }
 
