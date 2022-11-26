@@ -29,7 +29,7 @@ class ConfigManagerTest {
         configManager.save(config);
 
         var modifiedConfig = configManager.get();
-        assertEquals("C:\\Users\\bart\\AppData\\Roaming\\JetBrains\\IntelliJIdea2022.2\\scratches", modifiedConfig.getProperty("scratchPath"));
+        assertEquals("C:\\Users\\bart\\AppData\\Roaming\\JetBrains\\IntelliJIdea2022.2\\scratches", modifiedConfig.getProperty("scratchFolder"));
     }
 
 }
