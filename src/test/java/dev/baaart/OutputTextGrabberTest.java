@@ -22,11 +22,7 @@ class OutputTextGrabberTest {
     void get() {
         selection = new StringSelection(TEST_STRING);
         clipboard.setContents(selection, null);
-        try {
-            assertEquals(TEST_STRING, ClipboardGrabber.INSTANCE.getContents());
-        } catch (Exception ex) {
-
-        }
+        assertEquals(TEST_STRING, ClipboardGrabber.INSTANCE.getContents());
     }
 
     @SneakyThrows
@@ -34,10 +30,6 @@ class OutputTextGrabberTest {
     void emptyTest() {
         selection = new StringSelection(EMPTY_STRING);
         clipboard.setContents(selection, null);
-        try {
-            assertEquals(EMPTY_STRING, ClipboardGrabber.INSTANCE.getContents());
-        } catch (Exception ex) {
-
-        }
+        assertEquals(EMPTY_STRING, ClipboardGrabber.INSTANCE.getContents());
     }
 }

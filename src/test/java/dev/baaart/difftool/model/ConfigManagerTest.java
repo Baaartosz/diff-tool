@@ -1,4 +1,4 @@
-package dev.baaart;
+package dev.baaart.difftool.model;
 
 import dev.baaart.difftool.model.ConfigManager;
 import org.junit.jupiter.api.BeforeEach;

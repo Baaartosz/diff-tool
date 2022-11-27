@@ -1,5 +1,6 @@
-package dev.baaart.difftool.model;
+package dev.baaart;
 
+import dev.baaart.difftool.model.ConfigResource;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -53,14 +54,10 @@ class ConfigResourceTest {
         assertEquals(properties.getProperty("mode.1.expected"), "(1a :) )");
     }
 
-    @SneakyThrows // TODO FIXME SneakyThrows is not working.
+    @SneakyThrows
     @Test
     void deletePropertiesFileFromSystem() {
-        try {
-            configResource.delete();
-        } catch (Exception ex) {
-            fail();
-        }
+        configResource.delete();
         assertTrue(Files.notExists(PATH_TO_RESOURCE));
     }
 
